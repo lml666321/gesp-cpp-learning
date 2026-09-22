@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GESP C++ 二级单元一互动学习 Demo">
+  <title>GESP C++ 二级互动学习｜单元一</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" type="button" data-nav="home" aria-label="返回知识地图">
+      <span class="brand-mark">C<span>++</span></span>
+      <span><strong>GESP 互动学习</strong><small>二级 · 单元一</small></span>
+    </button>
+    <nav class="topnav" aria-label="主要导航">
+      <button class="nav-link active" type="button" data-nav="home">知识地图</button>
+      <button class="nav-link" type="button" data-nav="unit">单元概览</button>
+    </nav>
+    <div class="header-progress" aria-label="单元学习进度">
+      <span>单元进度</span>
+      <div class="progress-track"><i id="headerProgressBar"></i></div>
+      <strong id="headerProgressText">0%</strong>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/lessons.js"></script>
+  <script src="data/questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

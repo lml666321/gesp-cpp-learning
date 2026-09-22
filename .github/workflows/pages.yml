@@ -1,0 +1,55 @@
+name: Deploy GESP learning site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'GESP_Unit1_Interactive_Demo/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check GESP_Unit1_Interactive_Demo/app.js
+          node --check GESP_Unit1_Interactive_Demo/data/lessons.js
+          node --check GESP_Unit1_Interactive_Demo/data/questions.js
+
+      - name: Prepare website files
+        run: |
+          mkdir -p "$RUNNER_TEMP/gesp-pages/data"
+          cp GESP_Unit1_Interactive_Demo/index.html "$RUNNER_TEMP/gesp-pages/"
+          cp GESP_Unit1_Interactive_Demo/styles.css "$RUNNER_TEMP/gesp-pages/"
+          cp GESP_Unit1_Interactive_Demo/app.js "$RUNNER_TEMP/gesp-pages/"
+          cp GESP_Unit1_Interactive_Demo/data/lessons.js "$RUNNER_TEMP/gesp-pages/data/"
+          cp GESP_Unit1_Interactive_Demo/data/questions.js "$RUNNER_TEMP/gesp-pages/data/"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/gesp-pages
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

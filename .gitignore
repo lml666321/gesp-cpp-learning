@@ -1,0 +1,25 @@
+# Only reviewed project files are eligible for publication.
+/*
+!/.gitignore
+!/README.md
+!/.github/
+!/GESP_Unit1_Interactive_Demo/
+!/CODE_QUEST_GESP_CPP_Demo_升级版.html
+
+# Keep source documents, archives, machine files and future unreviewed files local.
+/GESP_Unit1_Interactive_Demo/*
+!/GESP_Unit1_Interactive_Demo/index.html
+!/GESP_Unit1_Interactive_Demo/styles.css
+!/GESP_Unit1_Interactive_Demo/app.js
+!/GESP_Unit1_Interactive_Demo/data/
+/GESP_Unit1_Interactive_Demo/data/*
+!/GESP_Unit1_Interactive_Demo/data/lessons.js
+!/GESP_Unit1_Interactive_Demo/data/questions.js
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/pages.yml
+.DS_Store
+.env
+.env.*
+node_modules/
