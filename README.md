@@ -2,6 +2,9 @@
 
 面向 GESP C++ 二级的互动学习网页，当前提供「单元一｜程序基础与数据表达」。这是独立制作的教学 Demo。
 
+- 在线学习：https://lml666321.github.io/gesp-cpp-learning/
+- 项目仓库：https://github.com/lml666321/gesp-cpp-learning
+
 ## 学习内容
 
 - 第一章：程序如何工作、输入与输出、变量与赋值、基本数据类型。
@@ -33,7 +36,7 @@ CODE_QUEST_GESP_CPP_Demo_升级版.html  # 历史版本，仅供对比
 
 ## 发布与更新
 
-GitHub 仓库使用 `main` 分支。首次发布需要在仓库 Settings → Pages 中将 Source 设为 GitHub Actions。
+GitHub 仓库使用 `main` 分支，已启用 GitHub Actions 发布。复制项目到其他仓库时，需要在仓库 Settings → Pages 中将 Source 设为 GitHub Actions。
 
 推送新版网页或部署配置的修改后，Actions 会检查三个 JavaScript 文件的语法，只打包上述五个网页文件并发布到 GitHub Pages。也可以在 Actions 中手动运行 `Deploy GESP learning site`。
 
