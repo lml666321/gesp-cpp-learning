@@ -23,3 +23,9 @@
 .env
 .env.*
 node_modules/
+
+# Local browser regression script; never included in the Pages artifact.
+!/tests/
+/tests/*
+!/tests/site-regression.cjs
+!/tests/content-check.cjs
